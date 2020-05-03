@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>pattern</title>
+	<style>
+		body{
+			margin:0;
+			height:100vh;
+			display:flex;
+			align-items: center;
+			justify-content: center;
+			background: radial-gradient(yellow,purple);
+		}
+		.dots{
+			width: 10em;
+			height:10em;
+			font-size: 20px;
+		}
+		.dots:before,.dots:after{
+			content: '';
+			position: absolute;
+			width:1em;
+			height:1em;
+			background: currentColor;
+			box-shadow: 0 0, 2em 0, 4em 0, 6em 0,
+			0 2em, 2em 2em, 4em 2em, 6em 2em,
+			0 4em, 2em 4em, 4em 4em, 6em 4em,
+			0 6em, 2em 6em, 4em 6em, 6em 6em;
+			
+			animation: round 2s ease infinite;
+
+		}
+		.dots:before{
+			color: blue;
+		}
+		.dots:after{
+			color: green;
+			animation-delay: -1s;
+		}
+		@keyframes round{
+			0%{
+				transform: rotateX(30deg);
+			}
+			25%{
+				transform: rotate(60deg);
+			}
+			/*50%{
+				transform: skew(45deg);
+			}
+			75%{
+				transform: scale(1);
+			}*/
+		}
+		header{
+			float: right;
+			margin-top: 0%;
+		}
+	</style>
+</head>
+<body>
+	    <header></header>
+
+    <div class="dots"></div>
+    
+</body>
+</html>
